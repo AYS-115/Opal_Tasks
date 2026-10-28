@@ -1,3 +1,4 @@
+package From_abdullah.FeedbackPortal;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -80,7 +81,6 @@ public class FeedbackPortal {
         System.out.println("7. Save and exit");
     }
 
-    // Read keyboard input and detect when the input stream ends.
     public static String readLine(String message) throws IOException {
         System.out.print(message);
         String text = input.readLine();
@@ -92,7 +92,6 @@ public class FeedbackPortal {
         return text.trim();
     }
 
-    // Keep asking until the user enters a valid whole number.
     public static int readInt(String message) throws IOException {
         while (true) {
             String text = readLine(message);
@@ -105,7 +104,7 @@ public class FeedbackPortal {
         }
     }
 
-    // Names and comments cannot be empty or contain the file separator.
+    
     public static String readText(String message) throws IOException {
         while (true) {
             String text = readLine(message);
@@ -225,7 +224,6 @@ public class FeedbackPortal {
 
         int index = number - 1;
 
-        // Move later entries one position to the left.
         for (int i = index; i < count - 1; i++) {
             names[i] = names[i + 1];
             ratings[i] = ratings[i + 1];
@@ -234,7 +232,6 @@ public class FeedbackPortal {
 
         count--;
 
-        // Clear the position that is no longer used.
         names[count] = null;
         ratings[count] = 0;
         comments[count] = null;
@@ -265,7 +262,6 @@ public class FeedbackPortal {
     public static void loadFeedback() {
         File file = new File(filename);
 
-        // A missing file is normal on the first run.
         if (!file.exists()) {
             System.out.println("No saved file found. Starting empty.");
             return;
